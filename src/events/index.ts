@@ -10,6 +10,7 @@ export { resize } from "./resize";
 export type { ViewportSize } from "./resize";
 export { scroll } from "./scroll";
 export type { ScrollPosition } from "./scroll";
+export { storage } from "./storage";
 export { theme } from "./theme";
 export { visibility } from "./visibility";
 export { wheel } from "./wheel";

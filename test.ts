@@ -118,4 +118,9 @@ const unsubWheel = browzer.events.wheel((event) => {
 });
 unsubWheel();
 
+const unsubStorage = browzer.events.storage((event) => {
+  console.log("storage", event.key);
+});
+unsubStorage();
+
 console.log("browzer.events ok");

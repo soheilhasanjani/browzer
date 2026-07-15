@@ -65,6 +65,10 @@ const unsubWheel = browzer.events.wheel((event) => {
   console.log(event.deltaY);
 });
 
+const unsubStorage = browzer.events.storage((event) => {
+  console.log(event.key, event.newValue);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -78,6 +82,7 @@ unsubScroll();
 unsubKeydown();
 unsubKeyup();
 unsubWheel();
+unsubStorage();
 ```
 
 ## Development
