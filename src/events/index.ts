@@ -1,6 +1,8 @@
 export { beforeUnload } from "./before-unload";
 export { error } from "./error";
 export { focus } from "./focus";
+export { focusin } from "./focusin";
+export { focusout } from "./focusout";
 export { keydown } from "./keydown";
 export { keyup } from "./keyup";
 export { load } from "./load";

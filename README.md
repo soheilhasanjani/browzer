@@ -77,6 +77,14 @@ const unsubError = browzer.events.error((event) => {
   console.log(event.message);
 });
 
+const unsubFocusin = browzer.events.focusin((event) => {
+  console.log(event.target);
+});
+
+const unsubFocusout = browzer.events.focusout((event) => {
+  console.log(event.target);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -93,6 +101,8 @@ unsubWheel();
 unsubStorage();
 unsubPopstate();
 unsubError();
+unsubFocusin();
+unsubFocusout();
 ```
 
 ## Development

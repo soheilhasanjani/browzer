@@ -133,4 +133,14 @@ const unsubError = browzer.events.error((event) => {
 });
 unsubError();
 
+const unsubFocusin = browzer.events.focusin((event) => {
+  console.log("focusin", event.target);
+});
+unsubFocusin();
+
+const unsubFocusout = browzer.events.focusout((event) => {
+  console.log("focusout", event.target);
+});
+unsubFocusout();
+
 console.log("browzer.events ok");
