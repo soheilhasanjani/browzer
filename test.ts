@@ -143,4 +143,14 @@ const unsubFocusout = browzer.events.focusout((event) => {
 });
 unsubFocusout();
 
+const unsubPageshow = browzer.events.pageshow((event) => {
+  console.log("pageshow", event.persisted);
+});
+unsubPageshow();
+
+const unsubPagehide = browzer.events.pagehide((event) => {
+  console.log("pagehide", event.persisted);
+});
+unsubPagehide();
+
 console.log("browzer.events ok");

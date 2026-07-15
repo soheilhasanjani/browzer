@@ -85,6 +85,14 @@ const unsubFocusout = browzer.events.focusout((event) => {
   console.log(event.target);
 });
 
+const unsubPageshow = browzer.events.pageshow((event) => {
+  console.log(event.persisted);
+});
+
+const unsubPagehide = browzer.events.pagehide((event) => {
+  console.log(event.persisted);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -103,6 +111,8 @@ unsubPopstate();
 unsubError();
 unsubFocusin();
 unsubFocusout();
+unsubPageshow();
+unsubPagehide();
 ```
 
 ## Development

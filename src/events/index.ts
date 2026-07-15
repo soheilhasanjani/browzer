@@ -8,6 +8,8 @@ export { keyup } from "./keyup";
 export { load } from "./load";
 export { online } from "./online";
 export { orientation } from "./orientation";
+export { pagehide } from "./pagehide";
+export { pageshow } from "./pageshow";
 export { popstate } from "./popstate";
 export { ready } from "./ready";
 export { resize } from "./resize";
