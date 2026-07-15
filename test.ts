@@ -25,6 +25,21 @@ globalThis.window = {
       },
     };
   },
+  visualViewport: {
+    width: 0,
+    height: 0,
+    offsetLeft: 0,
+    offsetTop: 0,
+    pageLeft: 0,
+    pageTop: 0,
+    scale: 1,
+    addEventListener(type: string, listener: EventListenerOrEventListenerObject) {
+      listeners.set(`visualViewport:${type}`, listener);
+    },
+    removeEventListener(type: string) {
+      listeners.delete(`visualViewport:${type}`);
+    },
+  },
 } as unknown as Window & typeof globalThis;
 
 globalThis.document = {
@@ -177,5 +192,50 @@ const unsubPointermove = browzer.events.pointermove((event) => {
   console.log("pointermove", event.clientX, event.clientY);
 });
 unsubPointermove();
+
+const unsubCopy = browzer.events.copy((event) => {
+  console.log("copy", event.type);
+});
+unsubCopy();
+
+const unsubCut = browzer.events.cut((event) => {
+  console.log("cut", event.type);
+});
+unsubCut();
+
+const unsubPaste = browzer.events.paste((event) => {
+  console.log("paste", event.type);
+});
+unsubPaste();
+
+const unsubTouchstart = browzer.events.touchstart((event) => {
+  console.log("touchstart", event.touches.length);
+});
+unsubTouchstart();
+
+const unsubTouchend = browzer.events.touchend((event) => {
+  console.log("touchend", event.touches.length);
+});
+unsubTouchend();
+
+const unsubDeviceorientation = browzer.events.deviceorientation((event) => {
+  console.log("deviceorientation", event.alpha);
+});
+unsubDeviceorientation();
+
+const unsubDevicemotion = browzer.events.devicemotion((event) => {
+  console.log("devicemotion", event.interval);
+});
+unsubDevicemotion();
+
+const unsubReducedMotion = browzer.events.reducedMotion((enabled) => {
+  console.log("reducedMotion", enabled);
+});
+unsubReducedMotion();
+
+const unsubViewport = browzer.events.viewport((state) => {
+  console.log("viewport", state.width, state.height);
+});
+unsubViewport();
 
 console.log("browzer.events ok");

@@ -113,6 +113,42 @@ const unsubPointermove = browzer.events.pointermove((event) => {
   console.log(event.clientX, event.clientY);
 });
 
+const unsubCopy = browzer.events.copy((event) => {
+  console.log(event.type);
+});
+
+const unsubCut = browzer.events.cut((event) => {
+  console.log(event.type);
+});
+
+const unsubPaste = browzer.events.paste((event) => {
+  console.log(event.type);
+});
+
+const unsubTouchstart = browzer.events.touchstart((event) => {
+  console.log(event.touches.length);
+});
+
+const unsubTouchend = browzer.events.touchend((event) => {
+  console.log(event.touches.length);
+});
+
+const unsubDeviceorientation = browzer.events.deviceorientation((event) => {
+  console.log(event.alpha);
+});
+
+const unsubDevicemotion = browzer.events.devicemotion((event) => {
+  console.log(event.interval);
+});
+
+const unsubReducedMotion = browzer.events.reducedMotion((enabled) => {
+  console.log(enabled);
+});
+
+const unsubViewport = browzer.events.viewport((state) => {
+  console.log(state.width, state.height, state.scale);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -138,6 +174,15 @@ unsubHashchange();
 unsubPointerdown();
 unsubPointerup();
 unsubPointermove();
+unsubCopy();
+unsubCut();
+unsubPaste();
+unsubTouchstart();
+unsubTouchend();
+unsubDeviceorientation();
+unsubDevicemotion();
+unsubReducedMotion();
+unsubViewport();
 ```
 
 ## Development
