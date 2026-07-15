@@ -29,10 +29,15 @@ const unsubOrientation = browzer.events.orientation((type) => {
   console.log(type); // "portrait-primary" | "landscape-primary" | ...
 });
 
+const unsubFocus = browzer.events.focus((isFocused) => {
+  console.log(isFocused ? "focused" : "blurred");
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
 unsubOrientation();
+unsubFocus();
 ```
 
 ## Development

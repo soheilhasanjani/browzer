@@ -72,4 +72,9 @@ const unsubOrientation = browzer.events.orientation((type) => {
 });
 unsubOrientation();
 
+const unsubFocus = browzer.events.focus((isFocused) => {
+  console.log("focus", isFocused);
+});
+unsubFocus();
+
 console.log("browzer.events ok");
