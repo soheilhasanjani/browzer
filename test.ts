@@ -29,6 +29,7 @@ globalThis.window = {
 
 globalThis.document = {
   visibilityState: "visible",
+  readyState: "complete",
   addEventListener(type: string, listener: EventListenerOrEventListenerObject) {
     listeners.set(type, listener);
   },
@@ -76,5 +77,20 @@ const unsubFocus = browzer.events.focus((isFocused) => {
   console.log("focus", isFocused);
 });
 unsubFocus();
+
+const unsubReady = browzer.events.ready(() => {
+  console.log("ready");
+});
+unsubReady();
+
+const unsubLoad = browzer.events.load(() => {
+  console.log("load");
+});
+unsubLoad();
+
+const unsubBeforeUnload = browzer.events.beforeUnload((event) => {
+  console.log("beforeUnload", event.type);
+});
+unsubBeforeUnload();
 
 console.log("browzer.events ok");

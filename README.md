@@ -33,11 +33,26 @@ const unsubFocus = browzer.events.focus((isFocused) => {
   console.log(isFocused ? "focused" : "blurred");
 });
 
+const unsubReady = browzer.events.ready(() => {
+  console.log("DOM ready");
+});
+
+const unsubLoad = browzer.events.load(() => {
+  console.log("page loaded");
+});
+
+const unsubBeforeUnload = browzer.events.beforeUnload((event) => {
+  event.preventDefault();
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
 unsubOrientation();
 unsubFocus();
+unsubReady();
+unsubLoad();
+unsubBeforeUnload();
 ```
 
 ## Development
