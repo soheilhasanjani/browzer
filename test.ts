@@ -103,4 +103,14 @@ const unsubScroll = browzer.events.scroll((position) => {
 });
 unsubScroll();
 
+const unsubKeydown = browzer.events.keydown((event) => {
+  console.log("keydown", event.key);
+});
+unsubKeydown();
+
+const unsubKeyup = browzer.events.keyup((event) => {
+  console.log("keyup", event.key);
+});
+unsubKeyup();
+
 console.log("browzer.events ok");

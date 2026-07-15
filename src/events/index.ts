@@ -1,5 +1,7 @@
 export { beforeUnload } from "./before-unload";
 export { focus } from "./focus";
+export { keydown } from "./keydown";
+export { keyup } from "./keyup";
 export { load } from "./load";
 export { online } from "./online";
 export { orientation } from "./orientation";

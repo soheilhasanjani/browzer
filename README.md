@@ -53,6 +53,14 @@ const unsubScroll = browzer.events.scroll(({ x, y }) => {
   console.log(x, y);
 });
 
+const unsubKeydown = browzer.events.keydown((event) => {
+  console.log(event.key);
+});
+
+const unsubKeyup = browzer.events.keyup((event) => {
+  console.log(event.key);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -63,6 +71,8 @@ unsubLoad();
 unsubBeforeUnload();
 unsubResize();
 unsubScroll();
+unsubKeydown();
+unsubKeyup();
 ```
 
 ## Development
