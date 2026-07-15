@@ -61,6 +61,10 @@ const unsubKeyup = browzer.events.keyup((event) => {
   console.log(event.key);
 });
 
+const unsubWheel = browzer.events.wheel((event) => {
+  console.log(event.deltaY);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -73,6 +77,7 @@ unsubResize();
 unsubScroll();
 unsubKeydown();
 unsubKeyup();
+unsubWheel();
 ```
 
 ## Development

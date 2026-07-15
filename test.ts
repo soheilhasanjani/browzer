@@ -113,4 +113,9 @@ const unsubKeyup = browzer.events.keyup((event) => {
 });
 unsubKeyup();
 
+const unsubWheel = browzer.events.wheel((event) => {
+  console.log("wheel", event.deltaY);
+});
+unsubWheel();
+
 console.log("browzer.events ok");
