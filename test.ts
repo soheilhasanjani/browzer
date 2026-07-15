@@ -37,6 +37,21 @@ globalThis.document = {
   },
 } as unknown as Document;
 
+Object.defineProperty(globalThis, "screen", {
+  value: {
+    orientation: {
+      type: "portrait-primary",
+      addEventListener(type: string, listener: EventListenerOrEventListenerObject) {
+        listeners.set(`orientation:${type}`, listener);
+      },
+      removeEventListener(type: string) {
+        listeners.delete(`orientation:${type}`);
+      },
+    },
+  },
+  configurable: true,
+});
+
 const unsubOnline = browzer.events.online((isOnline) => {
   console.log("online", isOnline);
 });
@@ -51,5 +66,10 @@ const unsubTheme = browzer.events.theme((isDark) => {
   console.log("theme", isDark);
 });
 unsubTheme();
+
+const unsubOrientation = browzer.events.orientation((type) => {
+  console.log("orientation", type);
+});
+unsubOrientation();
 
 console.log("browzer.events ok");

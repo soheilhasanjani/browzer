@@ -25,9 +25,14 @@ const unsubTheme = browzer.events.theme((isDark) => {
   console.log(isDark ? "dark" : "light");
 });
 
+const unsubOrientation = browzer.events.orientation((type) => {
+  console.log(type); // "portrait-primary" | "landscape-primary" | ...
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
+unsubOrientation();
 ```
 
 ## Development
