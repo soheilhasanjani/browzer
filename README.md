@@ -21,8 +21,13 @@ const unsubVisibility = browzer.events.visibility((state) => {
   console.log(state); // "visible" | "hidden"
 });
 
+const unsubTheme = browzer.events.theme((isDark) => {
+  console.log(isDark ? "dark" : "light");
+});
+
 unsubOnline();
 unsubVisibility();
+unsubTheme();
 ```
 
 ## Development

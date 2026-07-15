@@ -14,6 +14,17 @@ globalThis.window = {
   removeEventListener(type: string) {
     listeners.delete(type);
   },
+  matchMedia() {
+    return {
+      matches: false,
+      addEventListener(type: string, listener: EventListenerOrEventListenerObject) {
+        listeners.set(`media:${type}`, listener);
+      },
+      removeEventListener(type: string) {
+        listeners.delete(`media:${type}`);
+      },
+    };
+  },
 } as unknown as Window & typeof globalThis;
 
 globalThis.document = {
@@ -35,5 +46,10 @@ const unsubVisibility = browzer.events.visibility((state) => {
   console.log("visibility", state);
 });
 unsubVisibility();
+
+const unsubTheme = browzer.events.theme((isDark) => {
+  console.log("theme", isDark);
+});
+unsubTheme();
 
 console.log("browzer.events ok");
