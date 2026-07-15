@@ -45,6 +45,14 @@ const unsubBeforeUnload = browzer.events.beforeUnload((event) => {
   event.preventDefault();
 });
 
+const unsubResize = browzer.events.resize(({ width, height }) => {
+  console.log(width, height);
+});
+
+const unsubScroll = browzer.events.scroll(({ x, y }) => {
+  console.log(x, y);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -53,6 +61,8 @@ unsubFocus();
 unsubReady();
 unsubLoad();
 unsubBeforeUnload();
+unsubResize();
+unsubScroll();
 ```
 
 ## Development

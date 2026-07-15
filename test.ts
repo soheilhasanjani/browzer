@@ -93,4 +93,14 @@ const unsubBeforeUnload = browzer.events.beforeUnload((event) => {
 });
 unsubBeforeUnload();
 
+const unsubResize = browzer.events.resize((size) => {
+  console.log("resize", size);
+});
+unsubResize();
+
+const unsubScroll = browzer.events.scroll((position) => {
+  console.log("scroll", position);
+});
+unsubScroll();
+
 console.log("browzer.events ok");
