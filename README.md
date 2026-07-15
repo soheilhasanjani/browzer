@@ -11,9 +11,13 @@ npm install browzerjs
 ## Usage
 
 ```ts
-import { hello } from "browzerjs";
+import { browzer } from "browzerjs";
 
-console.log(hello()); // "Hello from browzerjs"
+const unsubscribe = browzer.events.online((isOnline) => {
+  console.log(isOnline ? "online" : "offline");
+});
+
+unsubscribe();
 ```
 
 ## Development
