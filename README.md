@@ -73,6 +73,10 @@ const unsubPopstate = browzer.events.popstate((event) => {
   console.log(event.state);
 });
 
+const unsubError = browzer.events.error((event) => {
+  console.log(event.message);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -88,6 +92,7 @@ unsubKeyup();
 unsubWheel();
 unsubStorage();
 unsubPopstate();
+unsubError();
 ```
 
 ## Development

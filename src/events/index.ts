@@ -1,4 +1,5 @@
 export { beforeUnload } from "./before-unload";
+export { error } from "./error";
 export { focus } from "./focus";
 export { keydown } from "./keydown";
 export { keyup } from "./keyup";

@@ -128,4 +128,9 @@ const unsubPopstate = browzer.events.popstate((event) => {
 });
 unsubPopstate();
 
+const unsubError = browzer.events.error((event) => {
+  console.log("error", event.message);
+});
+unsubError();
+
 console.log("browzer.events ok");
