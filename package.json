@@ -1,8 +1,16 @@
 {
-  "name": "browzer",
+  "name": "browzerjs",
   "version": "0.1.0",
   "description": "Better developer experience for modern browser APIs.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soheilhasanjani/browzerjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soheilhasanjani/browzerjs/issues"
+  },
+  "homepage": "https://github.com/soheilhasanjani/browzerjs#readme",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

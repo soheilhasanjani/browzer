@@ -1,19 +1,19 @@
-# Browzer
+# browzerjs
 
 Better developer experience for modern browser APIs.
 
 ## Installation
 
 ```bash
-npm install browzer
+npm install browzerjs
 ```
 
 ## Usage
 
 ```ts
-import { hello } from "browzer";
+import { hello } from "browzerjs";
 
-console.log(hello()); // "Hello from Browzer"
+console.log(hello()); // "Hello from browzerjs"
 ```
 
 ## Development

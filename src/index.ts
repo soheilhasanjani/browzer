@@ -1,3 +1,3 @@
 export function hello() {
-  return "Hello from Browzer";
+  return "Hello from browzerjs";
 }
