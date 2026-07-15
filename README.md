@@ -26,19 +26,16 @@ const unsubTheme = browzer.events.theme((isDark) => {
 });
 
 const unsubOrientation = browzer.events.orientation((type) => {
-  console.log(type); // "portrait-primary" | "landscape-primary" | ...
+  console.log(type);
 });
 
 const unsubFocus = browzer.events.focus((isFocused) => {
   console.log(isFocused ? "focused" : "blurred");
 });
 
-const unsubReady = browzer.events.ready(() => {
-  console.log("DOM ready");
-});
-
-const unsubLoad = browzer.events.load(() => {
-  console.log("page loaded");
+const unsubLifecycle = browzer.events.lifecycle((state) => {
+  // state: "ready" | "load"
+  console.log(state);
 });
 
 const unsubBeforeUnload = browzer.events.beforeUnload((event) => {
@@ -53,92 +50,64 @@ const unsubScroll = browzer.events.scroll(({ x, y }) => {
   console.log(x, y);
 });
 
-const unsubKeydown = browzer.events.keydown((event) => {
-  console.log(event.key);
+const unsubKey = browzer.events.key((state, event) => {
+  // state: "down" | "up"
+  console.log(state, event.key);
 });
 
-const unsubKeyup = browzer.events.keyup((event) => {
-  console.log(event.key);
-});
-
-const unsubWheel = browzer.events.wheel((event) => {
-  console.log(event.deltaY);
-});
-
-const unsubStorage = browzer.events.storage((event) => {
-  console.log(event.key, event.newValue);
-});
-
-const unsubPopstate = browzer.events.popstate((event) => {
-  console.log(event.state);
-});
-
-const unsubError = browzer.events.error((event) => {
-  console.log(event.message);
-});
-
-const unsubFocusin = browzer.events.focusin((event) => {
-  console.log(event.target);
-});
-
-const unsubFocusout = browzer.events.focusout((event) => {
-  console.log(event.target);
-});
-
-const unsubPageshow = browzer.events.pageshow((event) => {
-  console.log(event.persisted);
-});
-
-const unsubPagehide = browzer.events.pagehide((event) => {
-  console.log(event.persisted);
-});
-
-const unsubUnhandledRejection = browzer.events.unhandledRejection((event) => {
-  console.log(event.reason);
-});
-
-const unsubHashchange = browzer.events.hashchange((event) => {
-  console.log(event.newURL);
-});
-
-const unsubPointerdown = browzer.events.pointerdown((event) => {
-  console.log(event.pointerId);
-});
-
-const unsubPointerup = browzer.events.pointerup((event) => {
-  console.log(event.pointerId);
+const unsubPointer = browzer.events.pointer((state, event) => {
+  // state: "down" | "up"
+  console.log(state, event.pointerId);
 });
 
 const unsubPointermove = browzer.events.pointermove((event) => {
   console.log(event.clientX, event.clientY);
 });
 
-const unsubCopy = browzer.events.copy((event) => {
-  console.log(event.type);
+const unsubTouch = browzer.events.touch((state, event) => {
+  // state: "start" | "end"
+  console.log(state, event.touches.length);
 });
 
-const unsubCut = browzer.events.cut((event) => {
-  console.log(event.type);
+const unsubWheel = browzer.events.wheel((event) => {
+  console.log(event.deltaY);
 });
 
-const unsubPaste = browzer.events.paste((event) => {
-  console.log(event.type);
+const unsubClipboard = browzer.events.clipboard((state, event) => {
+  // state: "copy" | "cut" | "paste"
+  console.log(state, event.type);
 });
 
-const unsubTouchstart = browzer.events.touchstart((event) => {
-  console.log(event.touches.length);
+const unsubFocusChange = browzer.events.focusChange((state, event) => {
+  // state: "in" | "out"
+  console.log(state, event.target);
 });
 
-const unsubTouchend = browzer.events.touchend((event) => {
-  console.log(event.touches.length);
+const unsubHistory = browzer.events.history((state, event) => {
+  // state: "popstate" | "hashchange"
+  console.log(state, event.type);
 });
 
-const unsubDeviceorientation = browzer.events.deviceorientation((event) => {
-  console.log(event.alpha);
+const unsubPage = browzer.events.page((state, event) => {
+  // state: "show" | "hide"
+  console.log(state, event.persisted);
 });
 
-const unsubDevicemotion = browzer.events.devicemotion((event) => {
-  console.log(event.interval);
+const unsubStorage = browzer.events.storage((event) => {
+  console.log(event.key, event.newValue);
+});
+
+const unsubError = browzer.events.error((event) => {
+  console.log(event.message);
+});
+
+const unsubUnhandledRejection = browzer.events.unhandledRejection((event) => {
+  console.log(event.reason);
+});
+
+const unsubDevice = browzer.events.device((state, event) => {
+  // state: "orientation" | "motion"
+  console.log(state, event.type);
 });
 
 const unsubReducedMotion = browzer.events.reducedMotion((enabled) => {
@@ -154,33 +123,23 @@ unsubVisibility();
 unsubTheme();
 unsubOrientation();
 unsubFocus();
-unsubReady();
-unsubLoad();
+unsubLifecycle();
 unsubBeforeUnload();
 unsubResize();
 unsubScroll();
-unsubKeydown();
-unsubKeyup();
-unsubWheel();
-unsubStorage();
-unsubPopstate();
-unsubError();
-unsubFocusin();
-unsubFocusout();
-unsubPageshow();
-unsubPagehide();
-unsubUnhandledRejection();
-unsubHashchange();
-unsubPointerdown();
-unsubPointerup();
+unsubKey();
+unsubPointer();
 unsubPointermove();
-unsubCopy();
-unsubCut();
-unsubPaste();
-unsubTouchstart();
-unsubTouchend();
-unsubDeviceorientation();
-unsubDevicemotion();
+unsubTouch();
+unsubWheel();
+unsubClipboard();
+unsubFocusChange();
+unsubHistory();
+unsubPage();
+unsubStorage();
+unsubError();
+unsubUnhandledRejection();
+unsubDevice();
 unsubReducedMotion();
 unsubViewport();
 ```
