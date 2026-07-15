@@ -153,4 +153,29 @@ const unsubPagehide = browzer.events.pagehide((event) => {
 });
 unsubPagehide();
 
+const unsubUnhandledRejection = browzer.events.unhandledRejection((event) => {
+  console.log("unhandledRejection", event.reason);
+});
+unsubUnhandledRejection();
+
+const unsubHashchange = browzer.events.hashchange((event) => {
+  console.log("hashchange", event.newURL);
+});
+unsubHashchange();
+
+const unsubPointerdown = browzer.events.pointerdown((event) => {
+  console.log("pointerdown", event.pointerId);
+});
+unsubPointerdown();
+
+const unsubPointerup = browzer.events.pointerup((event) => {
+  console.log("pointerup", event.pointerId);
+});
+unsubPointerup();
+
+const unsubPointermove = browzer.events.pointermove((event) => {
+  console.log("pointermove", event.clientX, event.clientY);
+});
+unsubPointermove();
+
 console.log("browzer.events ok");

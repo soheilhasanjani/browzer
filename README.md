@@ -93,6 +93,26 @@ const unsubPagehide = browzer.events.pagehide((event) => {
   console.log(event.persisted);
 });
 
+const unsubUnhandledRejection = browzer.events.unhandledRejection((event) => {
+  console.log(event.reason);
+});
+
+const unsubHashchange = browzer.events.hashchange((event) => {
+  console.log(event.newURL);
+});
+
+const unsubPointerdown = browzer.events.pointerdown((event) => {
+  console.log(event.pointerId);
+});
+
+const unsubPointerup = browzer.events.pointerup((event) => {
+  console.log(event.pointerId);
+});
+
+const unsubPointermove = browzer.events.pointermove((event) => {
+  console.log(event.clientX, event.clientY);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -113,6 +133,11 @@ unsubFocusin();
 unsubFocusout();
 unsubPageshow();
 unsubPagehide();
+unsubUnhandledRejection();
+unsubHashchange();
+unsubPointerdown();
+unsubPointerup();
+unsubPointermove();
 ```
 
 ## Development
