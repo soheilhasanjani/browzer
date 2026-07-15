@@ -13,11 +13,16 @@ npm install browzerjs
 ```ts
 import { browzer } from "browzerjs";
 
-const unsubscribe = browzer.events.online((isOnline) => {
+const unsubOnline = browzer.events.online((isOnline) => {
   console.log(isOnline ? "online" : "offline");
 });
 
-unsubscribe();
+const unsubVisibility = browzer.events.visibility((state) => {
+  console.log(state); // "visible" | "hidden"
+});
+
+unsubOnline();
+unsubVisibility();
 ```
 
 ## Development
