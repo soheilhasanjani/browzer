@@ -69,6 +69,10 @@ const unsubStorage = browzer.events.storage((event) => {
   console.log(event.key, event.newValue);
 });
 
+const unsubPopstate = browzer.events.popstate((event) => {
+  console.log(event.state);
+});
+
 unsubOnline();
 unsubVisibility();
 unsubTheme();
@@ -83,6 +87,7 @@ unsubKeydown();
 unsubKeyup();
 unsubWheel();
 unsubStorage();
+unsubPopstate();
 ```
 
 ## Development

@@ -123,4 +123,9 @@ const unsubStorage = browzer.events.storage((event) => {
 });
 unsubStorage();
 
+const unsubPopstate = browzer.events.popstate((event) => {
+  console.log("popstate", event.state);
+});
+unsubPopstate();
+
 console.log("browzer.events ok");
